@@ -6,6 +6,8 @@ import datasets
 
 
 def main():
+    # SET MANUAL RANDOM SEED
+    np.random.seed(42)
     args = sys.argv[1:]
 
     print("Loading raw data from tsv to Pandas DataFrame")
@@ -39,6 +41,7 @@ def main():
         "Merging splitted DataFrames into single HuggingFace Dataset with data for text detoxification task"
     )
     merged_dataset = datasets.concatenate_datasets([tox_dataset, detox_dataset])
+    merged_dataset = merged_dataset.train_test_split(train_size=0.95)
     merged_dataset.save_to_disk(SAVE_PATH + "hf_dataset")
     print("Merged Dataset saved to: " + SAVE_PATH + "hf_dataset")
 

@@ -1,0 +1,9 @@
+numpy
+pandas
+datasets
+matplotlib
+sentencepiece
+transformers
+gdown
+sentence-transformers
+torch
