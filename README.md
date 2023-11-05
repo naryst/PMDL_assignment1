@@ -72,3 +72,12 @@ Where are 3 different options for the model inference
 * Manually finetuned T5 - ```python T5_inference.py```
 * Pretrained BART - ```python BART_inference.py```
 * Toxic words masking - ```python toxic_words_masking.py```
+
+This script will ask you to enter some text and will detoxify it.
+#### Visualization
+This script will show you some visual and text info about the initial dataset. And will show the visual representation, how T5 detoxification method cahnges the structure of the texts in the trein set in the visual way(WordClouds)
+To run it, use the following command
+```bash
+cd src/visualization
+python visualization.py
+```
