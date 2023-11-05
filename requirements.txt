@@ -7,3 +7,6 @@ transformers
 gdown
 sentence-transformers
 torch
+wordcloud
+accelerate
+bitsandbytes
