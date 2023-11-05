@@ -64,7 +64,7 @@ There is 3 different options for the model evaluation.
 * Manually Fine-Tuned T5 for toxic texts paraphraser
 * Mask the toxic words in the given text with the `s-nlp/roberta_toxicity_classifier`
 
-Results of the evaluation in the test set (`s-nlp/paradetox`) are available in the `TODO`
+Results of the evaluation in the test set (`s-nlp/paradetox`) are available in the `notebooks/test_set_results`
 
 
 #### Model Inference
