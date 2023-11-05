@@ -5,11 +5,15 @@ In this report I will describe my hypothesis, the steps I took to test it, and t
 For the given filtered ParaNMT dataset i came up to the following while performing Exploratory Data Analysis:
 
 * Dataste have the following distribution of the toxisity level among the translations and refrerences:
+
 ![dist](figures/tox_dist.png)
+
 That means that the pairs in the dataset not only in the format of toxic $\rightarrow$ non-toxic, but also non-toxic $\rightarrow$ toxic. That means that we firstly should roformat the initial dataset to the format toxic $\rightarrow$ non-toxic.
 
 * The next step I performed is the analysis of the text length distribution:
+
 ![dist](figures/len_dist.png)
+
 This is neccecary to understand the maximum length of the text we can use for the model training. As the context window of the modern language models is not infinite. From the plot, we can see that the maximum length of the text is `~250` tokens. So we can easily use most of the language models for the training.
 
 ## Hypothesis
@@ -23,11 +27,15 @@ Output: "I *** you"
 ### 2) Fine-tuning the language model on the toxic data
 The second hypothesis is to fine-tune the language model on the toxic data. For this purpose, I used the T5 model, which was initialy trained on the text paraphrasing task. `ceshine/t5-paraphrase-paws-msrp-opinosis`. And I Fine-Tuned this model on the proposed dataset of toxic $\rightarrow$ non-toxic pairs. Results of the training is the following:
 #### Train loss 
+
 ![loss](figures/lr=3e-5Loss.png)
+
 #### Validation loss
+
 ![loss](figures/lr=3e-5Eval.png)
 
 Results of this method work is the following:
+
 ![Alt text](figures/t5inf.png)
 
 ### 3) Use the ready models pretrained on the toxic data
